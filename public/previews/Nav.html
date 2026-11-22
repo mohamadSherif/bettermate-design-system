@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nav and top bar</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <aside class="bm-tile" style="width:248px;height:332px;gap:0;padding:var(--space-4) var(--space-3)">
+    <div style="padding:var(--space-2) var(--space-2) var(--space-5)"><img class="bm-wm bm-wm--light" src="/design/logos/bettermate-wordmark.svg" alt="BetterMate"><img class="bm-wm bm-wm--dark" src="/design/logos/bettermate-wordmark-inverse.svg" alt="BetterMate"></div>
+    <nav class="bm-nav" aria-label="Pages">
+      <a class="bm-nav__item" aria-current="page" href="#"><span data-icon="house"></span>Dashboard</a>
+      <a class="bm-nav__item is-hover" href="#"><span data-icon="list"></span>Profiles</a>
+      <a class="bm-nav__item" href="#"><span data-icon="history"></span>History</a>
+      <a class="bm-nav__item" href="#"><span data-icon="settings"></span>Settings</a>
+    </nav>
+    <p class="bm-help" style="margin-top:auto;padding:0 var(--space-2)">Based on <a class="bm-link bm-link--inline" href="#">GaggiMate</a></p>
+  </aside>
+  <div class="bm-stack" style="width:320px">
+    <span class="bm-eyebrow">Top bar, with a warning</span>
+    <div class="bm-topbar"><button class="bm-btn bm-btn--icon bm-btn--quiet" aria-label="Menu"><span data-icon="menu"></span></button><span><img class="bm-wm bm-wm--light" src="/design/logos/bettermate-wordmark.svg" alt="BetterMate"><img class="bm-wm bm-wm--dark" src="/design/logos/bettermate-wordmark-inverse.svg" alt="BetterMate"></span><button class="bm-btn bm-btn--icon bm-btn--quiet" aria-label="1 warning" style="color:var(--warning)"><span data-icon="triangle-alert"></span></button></div>
+    <span class="bm-eyebrow">Top bar, all normal</span>
+    <div class="bm-topbar"><button class="bm-btn bm-btn--icon bm-btn--quiet" aria-label="Menu"><span data-icon="menu"></span></button><span><img class="bm-wm bm-wm--light" src="/design/logos/bettermate-wordmark.svg" alt="BetterMate"><img class="bm-wm bm-wm--dark" src="/design/logos/bettermate-wordmark-inverse.svg" alt="BetterMate"></span><span style="width:var(--control-md)"></span></div>
+  </div>
+</div>
+<script>
+BetterMate.hydrate();
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Number field</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <section class="bm-tile" style="width:366px">
+    <div class="bm-grid2">
+      <label class="bm-field"><span class="bm-field__label">Dose</span><span class="bm-inputwrap"><input class="bm-input bm-input--num" inputmode="decimal" value="18.0" aria-describedby="u1"><span class="bm-input__unit" id="u1" aria-label="grams">g</span></span></label>
+      <label class="bm-field"><span class="bm-field__label">Yield</span><span class="bm-inputwrap"><input class="bm-input bm-input--num" inputmode="decimal" value="36.0" aria-describedby="u2"><span class="bm-input__unit" id="u2" aria-label="grams">g</span></span></label>
+    </div>
+    <label class="bm-field"><span class="bm-field__label">Target temperature</span><span class="bm-inputwrap"><input class="bm-input bm-input--num" inputmode="numeric" value="93" aria-describedby="u3 h3"><span class="bm-input__unit" id="u3" aria-label="degrees Celsius">°C</span></span><p class="bm-help" id="h3">80 to 100 °C.</p></label>
+  </section>
+  <section class="bm-tile" style="width:366px">
+    <label class="bm-field"><span class="bm-field__label">Pressure</span><span class="bm-inputwrap"><input class="bm-input bm-input--num" inputmode="decimal" value="14.0" aria-invalid="true" aria-describedby="u4 e4"><span class="bm-input__unit" id="u4" aria-label="bar">bar</span></span><span class="bm-field__msg bm-field__msg--error" id="e4"><span data-icon="circle-alert" data-size="14"></span>Enter 0.0 to 12.0 bar.</span></label>
+    <div class="bm-grid2">
+      <label class="bm-field"><span class="bm-field__label">Flow limit</span><span class="bm-inputwrap"><input class="bm-input bm-input--num" inputmode="decimal" value="2.5" aria-describedby="u5"><span class="bm-input__unit" id="u5" aria-label="millilitres a second">ml/s</span></span></label>
+      <label class="bm-field"><span class="bm-field__label">Standby after</span><span class="bm-inputwrap"><input class="bm-input bm-input--num" inputmode="numeric" value="30" aria-describedby="u6"><span class="bm-input__unit" id="u6" aria-label="minutes">min</span></span></label>
+    </div>
+  </section>
+</div>
+<script>
+BetterMate.hydrate();
+</script>
+</body>
+</html>

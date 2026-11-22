@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BetterMate</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--surface-0); color:var(--ink); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; width:960px; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+  .tile { rx:var(--radius-xl); }
+  .act { fill:var(--primary); }
+  .hot { fill:var(--heat); }
+  .deep { fill:var(--ink); }
+  .tint { fill:var(--primary-soft); }
+  .cut { stroke:var(--surface-0); stroke-width:var(--ring-tick); stroke-linecap:round; }
+  .seg { rx:3px; }
+  .lit { fill:var(--heat); }
+  .gap { fill:var(--surface-0); }
+  .words { position:absolute; left:var(--space-6); bottom:var(--space-6); max-width:440px; }
+  .name { margin:0; font-size:72px; line-height:.95; font-weight:600; letter-spacing:-.03em; color:var(--ink); }
+  .tag { margin:var(--space-3) 0 0 3px; font-size:14px; line-height:20px; color:var(--ink-muted); }
+</style>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+  blocks      primary 172 wide, bled off the top (the action colour, largest) · heat 128 square (the boiler) · ink 100 tall, bled off the right edge · primary-soft 128 tall, bled off the right (the one tint) = about 35% of 960 x 288
+  arrangement a bento of four tiles on space-3 gutters, the cobalt slab two rows tall like the Dial tile, bottoms on one line space-6 above the edge
+  pattern     ticks, from "Quantities are drawn in ticks": the single ring (26 ticks over 300 degrees) cut out of the cobalt slab in the ground colour, and one segment bar on the ink tile, 14 lit in heat and 8 in the ground
+  scales      tile corners radius-xl; gutters space-3; edge insets space-6; tick stroke ring-tick; bar pitch space-3
+-->
+<rect class="act tile" x="12" y="-28" width="172" height="292" rx="28"/>
+<rect class="hot tile" x="196" y="24" width="128" height="128" rx="28"/>
+<rect class="tint tile" x="336" y="24" width="172" height="128" rx="28"/>
+<rect class="deep tile" x="196" y="164" width="312" height="100" rx="28"/>
+<line class="cut" x1="75.0" y1="151.8" x2="64.0" y2="170.9"/>
+<line class="cut" x1="67.2" y1="146.2" x2="52.5" y2="162.5"/>
+<line class="cut" x1="60.8" y1="139.0" x2="43.0" y2="152.0"/>
+<line class="cut" x1="56.0" y1="130.7" x2="35.9" y2="139.7"/>
+<line class="cut" x1="53.0" y1="121.6" x2="31.5" y2="126.1"/>
+<line class="cut" x1="52.0" y1="112.0" x2="30.0" y2="112.0"/>
+<line class="cut" x1="53.0" y1="102.4" x2="31.5" y2="97.9"/>
+<line class="cut" x1="56.0" y1="93.3" x2="35.9" y2="84.3"/>
+<line class="cut" x1="60.8" y1="85.0" x2="43.0" y2="72.0"/>
+<line class="cut" x1="67.2" y1="77.8" x2="52.5" y2="61.5"/>
+<line class="cut" x1="75.0" y1="72.2" x2="64.0" y2="53.1"/>
+<line class="cut" x1="83.8" y1="68.3" x2="77.0" y2="47.3"/>
+<line class="cut" x1="93.2" y1="66.3" x2="90.9" y2="44.4"/>
+<line class="cut" x1="102.8" y1="66.3" x2="105.1" y2="44.4"/>
+<line class="cut" x1="112.2" y1="68.3" x2="119.0" y2="47.3"/>
+<line class="cut" x1="121.0" y1="72.2" x2="132.0" y2="53.1"/>
+<line class="cut" x1="128.8" y1="77.8" x2="143.5" y2="61.5"/>
+<line class="cut" x1="135.2" y1="85.0" x2="153.0" y2="72.0"/>
+<line class="cut" x1="140.0" y1="93.3" x2="160.1" y2="84.3"/>
+<line class="cut" x1="143.0" y1="102.4" x2="164.5" y2="97.9"/>
+<line class="cut" x1="144.0" y1="112.0" x2="166.0" y2="112.0"/>
+<line class="cut" x1="143.0" y1="121.6" x2="164.5" y2="126.1"/>
+<line class="cut" x1="140.0" y1="130.7" x2="160.1" y2="139.7"/>
+<line class="cut" x1="135.2" y1="139.0" x2="153.0" y2="152.0"/>
+<line class="cut" x1="128.8" y1="146.2" x2="143.5" y2="162.5"/>
+<line class="cut" x1="121.0" y1="151.8" x2="132.0" y2="170.9"/>
+<rect class="lit seg" x="220" y="198" width="6" height="32" rx="3"/>
+<rect class="lit seg" x="232" y="198" width="6" height="32" rx="3"/>
+<rect class="lit seg" x="244" y="198" width="6" height="32" rx="3"/>
+<rect class="lit seg" x="256" y="198" width="6" height="32" rx="3"/>
+<rect class="lit seg" x="268" y="198" width="6" height="32" rx="3"/>
+<rect class="lit seg" x="280" y="198" width="6" height="32" rx="3"/>
+<rect class="lit seg" x="292" y="198" width="6" height="32" rx="3"/>
+<rect class="lit seg" x="304" y="198" width="6" height="32" rx="3"/>
+<rect class="lit seg" x="316" y="198" width="6" height="32" rx="3"/>
+<rect class="lit seg" x="328" y="198" width="6" height="32" rx="3"/>
+<rect class="lit seg" x="340" y="198" width="6" height="32" rx="3"/>
+<rect class="lit seg" x="352" y="198" width="6" height="32" rx="3"/>
+<rect class="lit seg" x="364" y="198" width="6" height="32" rx="3"/>
+<rect class="lit seg" x="376" y="198" width="6" height="32" rx="3"/>
+<rect class="gap seg" x="388" y="198" width="6" height="32" rx="3"/>
+<rect class="gap seg" x="400" y="198" width="6" height="32" rx="3"/>
+<rect class="gap seg" x="412" y="198" width="6" height="32" rx="3"/>
+<rect class="gap seg" x="424" y="198" width="6" height="32" rx="3"/>
+<rect class="gap seg" x="436" y="198" width="6" height="32" rx="3"/>
+<rect class="gap seg" x="448" y="198" width="6" height="32" rx="3"/>
+<rect class="gap seg" x="460" y="198" width="6" height="32" rx="3"/>
+<rect class="gap seg" x="472" y="198" width="6" height="32" rx="3"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">BetterMate</h1>
+<p class="tag">One instrument, two faces: the round display and the web.</p>
+</div>
+</div>
+</body>
+</html>

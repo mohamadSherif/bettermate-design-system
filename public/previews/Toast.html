@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toast</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <div class="bm-stack" style="width:320px">
+    <span class="bm-eyebrow">Plain</span>
+    <div class="bm-toast" role="status">Profile saved</div>
+    <span class="bm-eyebrow">With one action</span>
+    <div class="bm-toast bm-toast--action" role="status"><span style="flex:1">Adaptive v2 deleted</span><button class="bm-btn bm-btn--quiet">Undo</button></div>
+    <span class="bm-eyebrow">A failure, also shown in place</span>
+    <div class="bm-toast" role="alert">Could not save. Check the connection.</div>
+  </div>
+  <div class="bm-stack" style="width:320px">
+    <span class="bm-eyebrow">Where it sits on a phone</span>
+    <div class="bm-float" style="height:236px">
+      <div style="padding:var(--space-3)"><section class="bm-tile"><div class="bm-tile__head"><h2 class="bm-sub">Profiles</h2></div><p class="bm-help">The page stays as it was.</p></section></div>
+      <div class="bm-toasts" style="bottom:calc(var(--space-16) + var(--space-5))"><div class="bm-toast" role="status">Stop the shot to change mode</div></div>
+      <nav class="bm-modebar" aria-label="Machine mode" data-no-audit style="position:absolute;left:var(--space-3);right:var(--space-3);bottom:var(--space-3)"><button class="bm-modebar__item" aria-pressed="false" aria-disabled="true"><span data-icon="power" data-size="22"></span>Standby</button><button class="bm-modebar__item" aria-pressed="true"><span data-icon="coffee" data-size="22"></span>Brew</button><button class="bm-modebar__item" aria-pressed="false"><span data-icon="wind" data-size="22"></span>Steam</button><button class="bm-modebar__item" aria-pressed="false" aria-disabled="true"><span data-icon="droplet" data-size="22"></span>Water</button></nav>
+    </div>
+  </div>
+</div>
+<script>
+BetterMate.hydrate();
+</script>
+</body>
+</html>

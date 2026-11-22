@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>States in three themes</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<style>
+.sm{display:flex;flex-direction:column;gap:var(--space-4);padding:var(--space-6)}
+.sm-grid{display:grid;grid-template-columns:132px repeat(5,minmax(0,1fr));align-items:center;gap:var(--space-3) var(--space-4)}
+.sm-grid>.bm-eyebrow{align-self:end}
+.sm-name{color:var(--ink-muted)}
+.sm-cell{display:flex;align-items:center;min-height:var(--control-md);min-width:0}
+.sm-none{color:var(--ink-faint)}
+</style>
+<div class="sm" id="sm"></div>
+<script>
+var I = BetterMate.icon;
+/* Each row: name, a function that returns the control's markup for (extra class, extra attributes, selected?) and which state columns apply. */
+function btn(v, label) { return function (c, a) { return '<button class="bm-btn ' + v + ' ' + c + '" ' + a + '>' + label + '</button>'; }; }
+var rows = [
+  ['Primary button', btn('bm-btn--primary', 'Save'), 'RHF-D'],
+  ['Ink button', btn('bm-btn--ink', 'New'), 'RHF-D'],
+  ['Default button', btn('', 'Tare'), 'RHF-D'],
+  ['Outline button', btn('bm-btn--outline', 'Export'), 'RHF-D'],
+  ['Danger button', btn('bm-btn--danger', 'Delete'), 'RHF-D'],
+  ['Segmented item', function (c, a, sel) { return '<span class="bm-seg"><button class="bm-seg__item ' + c + '" role="radio" aria-checked="' + (sel ? 'true' : 'false') + '" ' + a + '>Weight</button></span>'; }, 'RHFSD'],
+  ['Mode bar item', function (c, a, sel) { return '<span class="bm-modebar" style="width:76px"><button class="bm-modebar__item ' + c + '" aria-pressed="' + (sel ? 'true' : 'false') + '" ' + a.replace('disabled', 'aria-disabled="true"') + '>' + I('wind', 22) + 'Steam</button></span>'; }, 'RHFSD'],
+  ['Nav item', function (c, a, sel) { return '<a class="bm-nav__item ' + c + '" href="#" style="width:100%"' + (sel ? ' aria-current="page"' : '') + (a ? ' aria-disabled="true"' : '') + '>' + I('list') + 'Profiles</a>'; }, 'RHFS-'],
+  ['Stepper disc', function (c, a) { return '<button class="bm-stepper__btn ' + c + '" aria-label="Raise" ' + a + '>' + I('plus') + '</button>'; }, 'RHF-D'],
+  ['Switch', function (c, a, sel) { return '<button class="bm-switch ' + c + '" role="switch" aria-label="Smart grind" aria-checked="' + (sel ? 'true' : 'false') + '" ' + a + '></button>'; }, 'RHFSD'],
+  ['Input', function (c, a) { return '<input class="bm-input ' + c + '" aria-label="Machine name" value="Kitchen" ' + a + '>'; }, 'RHF-D']
+];
+var cols = [['R', 'Rest', '', ''], ['H', 'Hover, pressed', 'is-hover', ''], ['F', 'Focus', 'is-focus', ''], ['S', 'Selected', '', ''], ['D', 'Disabled, locked', '', 'disabled']];
+var themes = [['light', 'Light'], ['dark', 'Dark'], ['amoled', 'Display black']], out = '';
+themes.forEach(function (t) {
+  out += '<section class="bm-theme" data-theme="' + t[0] + '"><h2 class="bm-sub">' + t[1] + '</h2><div class="bm-tile"><div class="sm-grid"><span></span>';
+  cols.forEach(function (c) { out += '<span class="bm-eyebrow">' + c[1] + '</span>'; });
+  rows.forEach(function (r) {
+    out += '<span class="bm-help sm-name">' + r[0] + '</span>';
+    cols.forEach(function (c) {
+      var on = r[2].indexOf(c[0]) >= 0;
+      out += '<span class="sm-cell">' + (on ? r[1](c[2], c[3], c[0] === 'S') : '<span class="bm-data sm-none">n/a</span>') + '</span>';
+    });
+  });
+  out += '</div></div></section>';
+});
+document.getElementById('sm').innerHTML = out;
+</script>
+</body>
+</html>

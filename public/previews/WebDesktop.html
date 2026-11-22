@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web: desktop dashboard</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<style>
+.wd{display:grid;grid-template-columns:var(--sidebar) 1fr;gap:var(--space-3);padding:var(--space-3);min-height:776px}
+.wd-side{gap:0;padding:var(--space-4) var(--space-3)}
+.wd-main{position:relative;display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:auto auto 1fr;gap:var(--space-3);padding-bottom:84px;align-content:start}
+.wd-dial{grid-column:span 5;grid-row:span 2}
+.wd-cta{grid-column:span 4;align-items:flex-end;padding:var(--space-5)}
+.wd-a,.wd-b{grid-column:span 3}
+.wd-setup{grid-column:span 4}
+.wd-chart{grid-column:span 7}
+.wd-list{grid-column:span 5}
+.wd-dock{position:absolute;left:50%;bottom:var(--space-3);transform:translateX(-50%);width:400px}
+</style>
+<div class="wd">
+  <aside class="bm-tile wd-side">
+    <div style="padding:var(--space-2) var(--space-2) var(--space-5)"><img class="bm-wm bm-wm--light" src="/design/logos/bettermate-wordmark.svg" alt="BetterMate"><img class="bm-wm bm-wm--dark" src="/design/logos/bettermate-wordmark-inverse.svg" alt="BetterMate"></div>
+    <nav class="bm-nav" aria-label="Pages">
+      <a class="bm-nav__item" aria-current="page" href="#"><span data-icon="house"></span>Dashboard</a>
+      <a class="bm-nav__item" href="#"><span data-icon="list"></span>Profiles</a>
+      <a class="bm-nav__item" href="#"><span data-icon="history"></span>History</a>
+      <a class="bm-nav__item" href="#"><span data-icon="settings"></span>Settings</a>
+    </nav>
+    <p class="bm-help" style="margin-top:auto;padding:0 var(--space-2)">Based on <a class="bm-link bm-link--inline" href="#">GaggiMate</a></p>
+  </aside>
+  <main class="wd-main">
+    <section class="bm-tile wd-dial" aria-label="Machine">
+      <div class="bm-tile__head"><span class="bm-eyebrow">Brew · First</span><span class="bm-chip bm-chip--success"><i class="bm-chip__dot"></i>Ready</span></div>
+      <div class="bm-dial" style="width:min(100%,300px);margin:auto" data-ring='{"left":[0.575,0.58,"heat"],"right":[0,-1,"primary"]}'>
+        <div class="bm-dial__center"><span class="bm-eyebrow">Boiler</span><span class="bm-dial__value">92°</span><span class="bm-dial__plan">18.5 g in · 36 g out · 30 s</span></div>
+      </div>
+      <div class="bm-rowx" style="justify-content:space-between"><span class="bm-chip bm-chip--warning"><span data-icon="triangle-alert" data-size="14"></span>Flush recommended</span><button class="bm-btn bm-btn--sm"><span data-icon="droplet" data-size="18"></span>Flush</button></div>
+    </section>
+    <button class="bm-cta wd-cta"><span class="bm-cta__text"><span class="bm-cta__label">Start shot</span><span class="bm-cta__sub">Stops at 36 g</span></span><span class="bm-cta__disc" data-icon="play"></span></button>
+    <section class="bm-tile wd-a"><div class="bm-stat"><span class="bm-eyebrow">Water tank</span><div class="bm-stat__row"><span class="bm-stat__value">94</span><span class="bm-stat__unit">%</span></div><div class="bm-segbar bm-segbar--fill" data-segbar="19/20"></div></div></section>
+    <section class="bm-tile wd-setup">
+      <div class="bm-tile__head"><h2 class="bm-sub">Profile</h2><a class="bm-link" href="#">All profiles</a></div>
+      <div class="bm-seg bm-seg--scroll" role="radiogroup" aria-label="Favourite profiles"><button class="bm-seg__item" role="radio" aria-checked="true"><span class="bm-seg__label">First</span></button><button class="bm-seg__item" role="radio" aria-checked="false"><span class="bm-seg__label">Second</span></button><button class="bm-seg__item" role="radio" aria-checked="false"><span class="bm-seg__label">Bloom</span></button></div>
+      <div class="bm-setting"><span class="bm-field__label">Target temperature</span><span class="bm-stepper" role="group" aria-label="Target temperature"><button class="bm-stepper__btn" aria-label="Lower target temperature" data-icon="minus"></button><output class="bm-stepper__value">93°</output><button class="bm-stepper__btn" aria-label="Raise target temperature" data-icon="plus"></button></span></div>
+    </section>
+    <section class="bm-tile wd-b"><div class="bm-stat"><span class="bm-eyebrow">Last shot</span><div class="bm-stat__row"><span class="bm-stat__value">30.2</span><span class="bm-stat__unit">s</span></div><span class="bm-data">36.1 g · 10.0 bar</span></div></section>
+    <section class="bm-tile wd-chart">
+      <div class="bm-tile__head"><h2 class="bm-sub">Last shot</h2><span class="bm-rowx" style="gap:var(--space-2)"><span class="bm-chip"><span data-chart-key="pressure"></span>Pressure</span><span class="bm-chip"><span data-chart-key="flow"></span>Flow</span><span class="bm-chip"><span data-chart-key="temperature"></span>Temp</span></span></div>
+      <div data-chart='{"label": "Pressure, flow and temperature over a 30 second shot. Final values: 9.0 bar, 2.1 millilitres a second, 93 degrees.", "h": 208, "x": {"max": 30, "ticks": [0, 10, 20, 30], "unit": "s"}, "y": {"max": 12, "ticks": [0, 4, 8, 12]}, "series": [{"key": "temperature", "max": 120, "unit": "\u00b0", "digits": 0, "points": [[0, 92], [30, 93]]}, {"key": "pressure", "unit": " bar", "points": [[0, 0.2], [2.5, 1.6], [5, 2.0], [6.6, 2.2], [9.2, 4.8], [11.2, 7.8], [13.2, 9.0], [19.3, 9.0], [26.4, 9.0], [30, 8.8]]}, {"key": "flow", "max": 6, "unit": " ml/s", "points": [[0, 0], [4, 0.1], [7, 0.4], [10, 0.8], [13.2, 1.0], [19.3, 1.1], [26.4, 1.2], [30, 1.2]]}]}'></div>
+    </section>
+    <section class="bm-tile wd-list">
+      <div class="bm-tile__head"><h2 class="bm-sub">Recent shots</h2><a class="bm-link" href="#">All shots</a></div>
+      <div class="bm-list" role="list"><a class="bm-item" role="listitem" href="#"><span class="bm-item__icon" data-icon="coffee" data-size="20"></span><span class="bm-item__body"><div class="bm-item__title">First</div><div class="bm-item__meta">30.2 s · 36.1 g · 10.0 bar</div></span><span class="bm-item__end">Today 14:41</span></a><a class="bm-item" role="listitem" href="#"><span class="bm-item__icon" data-icon="coffee" data-size="20"></span><span class="bm-item__body"><div class="bm-item__title">First</div><div class="bm-item__meta">9.1 s · 10.0 bar</div></span><span class="bm-item__end">Today 14:38</span></a><a class="bm-item" role="listitem" href="#"><span class="bm-item__icon" data-icon="clock" data-size="20"></span><span class="bm-item__body"><div class="bm-item__title">Wake schedule</div><div class="bm-item__meta">Hot before your first coffee</div></span><span class="bm-item__end">06:30</span></a></div>
+    </section>
+    <div class="wd-dock"><nav class="bm-modebar" aria-label="Machine mode">
+  <button class="bm-modebar__item" aria-pressed="false"><span data-icon="power" data-size="22"></span>Standby</button>
+  <button class="bm-modebar__item" aria-pressed="true"><span data-icon="coffee" data-size="22"></span>Brew</button>
+  <button class="bm-modebar__item" aria-pressed="false"><span data-icon="wind" data-size="22"></span>Steam</button>
+  <button class="bm-modebar__item" aria-pressed="false"><span data-icon="droplet" data-size="22"></span>Water</button>
+  <button class="bm-modebar__item" aria-pressed="false"><span data-icon="bean" data-size="22"></span>Grind</button>
+</nav></div>
+  </main>
+</div>
+<script>
+BetterMate.hydrate();
+</script>
+</body>
+</html>

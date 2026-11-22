@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dial</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <div class="bm-dial" style="width:240px;margin:0" data-ring='{"full":[0.13,-1,"faint"]}'><div class="bm-dial__center"><span class="bm-eyebrow">Standby</span><span class="bm-dial__value">21°</span><span class="bm-dial__plan">Wakes at 06:30</span></div></div>
+  <div class="bm-dial" style="width:240px;margin:0" data-ring='{"left":[0.49,0.58,"heat"],"right":[0,-1,"primary"]}'><div class="bm-dial__center"><span class="bm-eyebrow">Heating</span><span class="bm-dial__value">78°</span><span class="bm-dial__plan">Ready in about 40 s</span></div></div>
+  <div class="bm-dial" style="width:240px;margin:0" data-ring='{"left":[0.58,0.58,"heat"],"right":[0.56,0.5625,"primary"]}'><div class="bm-dial__center"><span class="bm-eyebrow">Ramp to 9 bar</span><span class="bm-dial__value">0:15</span><span class="bm-dial__plan">93° · 9.0 bar</span></div></div>
+  <div class="bm-dial" style="width:240px;margin:0" data-ring='{"full":[0.63,-1,"ink"]}'><div class="bm-dial__center"><span class="bm-eyebrow">Grinding</span><span class="bm-dial__value">11.4</span><span class="bm-dial__plan">of 18.0 g</span></div></div>
+  <div class="bm-dial" style="width:240px;margin:0" data-ring='{"full":[0,-1,"faint"]}'><div class="bm-dial__center"><span class="bm-eyebrow">Offline</span><span class="bm-dial__value">—</span><span class="bm-dial__plan">Last seen 14:41</span></div></div>
+</div>
+<script>
+BetterMate.hydrate();
+</script>
+</body>
+</html>

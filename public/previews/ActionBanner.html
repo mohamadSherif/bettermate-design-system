@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Action banner</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <div class="bm-stack" style="width:366px">
+    <button class="bm-cta"><span class="bm-cta__text"><span class="bm-cta__label">Start shot</span><span class="bm-cta__sub">Stops at 36 g</span></span><span class="bm-cta__disc" data-icon="play"></span></button>
+    <button class="bm-cta"><span class="bm-cta__text"><span class="bm-cta__label">Wake up</span><span class="bm-cta__sub">Ready in about 4 min</span></span><span class="bm-cta__disc" data-icon="power"></span></button>
+    <button class="bm-cta" aria-busy="true"><span class="bm-cta__text"><span class="bm-cta__label">Starting</span><span class="bm-cta__sub">Waiting for the machine</span></span><span class="bm-cta__disc" data-loader data-size="24"></span></button>
+  </div>
+  <div class="bm-stack" style="width:366px">
+    <button class="bm-cta bm-cta--stop"><span class="bm-cta__text"><span class="bm-cta__label">Stop shot</span><span class="bm-cta__sub">21.7 of 36 g</span><span class="bm-segbar bm-segbar--fill" data-segbar="14/24"></span></span><span class="bm-cta__disc" data-icon="stop"></span></button>
+    <button class="bm-cta bm-cta--stop"><span class="bm-cta__text"><span class="bm-cta__label">Stop grinding</span><span class="bm-cta__sub">11.4 of 18 g</span><span class="bm-segbar bm-segbar--fill" data-segbar="15/24"></span></span><span class="bm-cta__disc" data-icon="stop"></span></button>
+    <button class="bm-cta" disabled><span class="bm-cta__text"><span class="bm-cta__label">Start shot</span><span class="bm-cta__sub">Fix the fault to brew</span></span><span class="bm-cta__disc" data-icon="play"></span></button>
+  </div>
+  <div class="bm-stack" style="width:296px">
+    <span class="bm-eyebrow">At 320 px</span>
+    <button class="bm-cta"><span class="bm-cta__text"><span class="bm-cta__label">Start grinding</span><span class="bm-cta__sub">Stops at 18.0 g, about 12 s</span></span><span class="bm-cta__disc" data-icon="play"></span></button>
+  </div>
+</div>
+<script>
+BetterMate.hydrate();
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Select</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <section class="bm-tile" style="width:366px">
+    <label class="bm-field"><span class="bm-field__label">Network</span><span class="bm-inputwrap"><select class="bm-select"><option>Home 5G</option><option>Home 2.4</option><option>Workshop</option><option>Other network</option></select><span class="bm-input__icon" data-icon="chevron-down" data-size="20"></span></span><p class="bm-help">Strongest first. The machine needs 2.4 GHz or 5 GHz.</p></label>
+    <label class="bm-field"><span class="bm-field__label">Timezone</span><span class="bm-inputwrap"><select class="bm-select"><option>New York (UTC−5)</option><option>Chicago (UTC−6)</option><option>Denver (UTC−7)</option><option>Los Angeles (UTC−8)</option></select><span class="bm-input__icon" data-icon="chevron-down" data-size="20"></span></span></label>
+  </section>
+  <section class="bm-tile" style="width:366px">
+    <label class="bm-field"><span class="bm-field__label">Scale</span><span class="bm-inputwrap"><select class="bm-select" aria-invalid="true" aria-describedby="se"><option>Choose a scale</option><option>Bookoo Mini</option><option>Acaia Lunar</option></select><span class="bm-input__icon" data-icon="chevron-down" data-size="20"></span></span><span class="bm-field__msg bm-field__msg--error" id="se"><span data-icon="circle-alert" data-size="14"></span>Choose a scale, or turn off Stop by weight.</span></label>
+    <label class="bm-field"><span class="bm-field__label">Network</span><span class="bm-inputwrap"><select class="bm-select" disabled aria-describedby="sc"><option>Scanning</option></select><span class="bm-input__icon" data-icon="chevron-down" data-size="20"></span></span><span class="bm-field__msg" id="sc"><span data-loader data-size="14"></span>Looking for networks nearby.</span></label>
+  </section>
+</div>
+<script>
+BetterMate.hydrate();
+</script>
+</body>
+</html>

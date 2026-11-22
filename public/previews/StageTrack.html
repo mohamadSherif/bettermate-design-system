@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage track</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <div class="bm-stages" style="width:340px">
+    <div class="bm-stages__step is-done" style="--w:1.4"><div class="bm-stages__bar"><i style="--p:100%"></i></div><span class="bm-stages__name"><span data-icon="check" data-size="14"></span>Preinfuse</span></div>
+    <div class="bm-stages__step is-now" style="--w:1.5"><div class="bm-stages__bar"><i style="--p:55%"></i></div><span class="bm-stages__name">Ramp</span></div>
+    <div class="bm-stages__step" style="--w:2.2"><div class="bm-stages__bar"><i></i></div><span class="bm-stages__name">Hold</span></div>
+  </div>
+  <div class="bm-stages" style="width:340px">
+    <div class="bm-stages__step is-done"><div class="bm-stages__bar"><i style="--p:100%"></i></div><span class="bm-stages__name"><span data-icon="check" data-size="14"></span>Grind</span></div>
+    <div class="bm-stages__step is-done"><div class="bm-stages__bar"><i style="--p:100%"></i></div><span class="bm-stages__name"><span data-icon="check" data-size="14"></span>Brew</span></div>
+    <div class="bm-stages__step is-now"><div class="bm-stages__bar"><i style="--p:100%"></i></div><span class="bm-stages__name">Ready</span></div>
+  </div>
+</div>
+<script>
+BetterMate.hydrate();
+</script>
+</body>
+</html>

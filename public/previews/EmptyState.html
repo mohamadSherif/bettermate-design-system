@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Empty state</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <section class="bm-tile" style="width:320px"><div class="bm-tile__head"><h2 class="bm-sub">Recent shots</h2></div><div class="bm-empty"><span class="bm-empty__icon" data-icon="coffee"></span><h3 class="bm-empty__title">No shots yet</h3><p class="bm-empty__text">Your shots appear here, newest first, as soon as you pull one.</p></div></section>
+  <section class="bm-tile" style="width:320px"><div class="bm-tile__head"><h2 class="bm-sub">Profiles</h2></div><div class="bm-empty"><span class="bm-empty__icon" data-icon="search"></span><h3 class="bm-empty__title">No profiles match “decaf”</h3><p class="bm-empty__text">Check the spelling, or look through all 12 profiles.</p><button class="bm-btn">Clear search</button></div></section>
+  <section class="bm-tile" style="width:320px"><div class="bm-tile__head"><h2 class="bm-sub">Weight</h2></div><div class="bm-empty"><span class="bm-empty__icon" data-icon="scale"></span><h3 class="bm-empty__title">No scale connected</h3><p class="bm-empty__text">With a scale, shots stop at their target weight.</p><button class="bm-btn">Pair a scale</button></div></section>
+</div>
+<script>
+BetterMate.hydrate();
+</script>
+</body>
+</html>

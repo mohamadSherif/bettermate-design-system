@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motion on the web</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<style>
+.mw-box{position:relative;height:116px;border-radius:var(--radius-lg);background:var(--surface-0);overflow:hidden}
+.mw-sheet{position:absolute;left:var(--space-2);right:var(--space-2);bottom:var(--space-2);display:flex;align-items:center;justify-content:space-between;gap:var(--space-2);padding:var(--space-3) var(--space-3) var(--space-3) var(--space-4);border:var(--hairline) solid var(--line);border-radius:var(--radius-md);background:var(--surface-1);opacity:0;transform:translateY(16px);transition:opacity var(--duration-fast) var(--ease-in),transform var(--duration-fast) var(--ease-in)}
+.mw-sheet.is-open{opacity:1;transform:none;transition:opacity var(--duration-base) var(--ease-out),transform var(--duration-base) var(--ease-out)}
+@media (prefers-reduced-motion:reduce){.mw-sheet,.mw-sheet.is-open{transition:none;transform:none}}
+</style>
+<div class="bm-stage">
+  <section class="bm-tile" style="width:212px"><span class="bm-eyebrow">Press · 120 ms</span><button class="bm-btn bm-btn--primary bm-btn--block">Save</button><span class="bm-stepper"><button class="bm-stepper__btn" aria-label="Lower" data-icon="minus"></button><span class="bm-stepper__value" id="sv">93°</span><button class="bm-stepper__btn" aria-label="Raise" data-icon="plus"></button></span><p class="bm-help">Scale to 0.97 and a fill change. The number snaps.</p></section>
+  <section class="bm-tile" style="width:212px"><span class="bm-eyebrow">Select · 120 / 200 ms</span><div class="bm-seg bm-seg--block bm-seg--on-tile" id="seg"><button class="bm-seg__item" aria-pressed="true">Time</button><button class="bm-seg__item" aria-pressed="false">Weight</button></div><div class="bm-setting"><span class="bm-field__label">Smart grind</span><button class="bm-switch" id="sw" role="switch" aria-checked="true" aria-label="Smart grind"></button></div><p class="bm-help">Fills change in 120 ms. Only the switch knob travels, in 200 ms.</p></section>
+  <section class="bm-tile" style="width:212px"><span class="bm-eyebrow">Enter 200 · leave 120 ms</span><div class="mw-box"><div class="mw-sheet" id="sheet"><span class="bm-sub">Save changes</span><button class="bm-btn bm-btn--primary bm-btn--sm">Save</button></div></div><button class="bm-btn bm-btn--block" id="open">Toggle sheet</button></section>
+  <section class="bm-tile" style="width:212px"><span class="bm-eyebrow">Live reading · no tween</span><div class="bm-stat"><div class="bm-stat__row"><span class="bm-stat__value" id="lv">9.0</span><span class="bm-stat__unit">bar</span></div><div class="bm-segbar bm-segbar--fill bm-segbar--primary" id="lb"></div></div><p class="bm-help">Digits snap as telemetry arrives. Segments recolour in 120 ms, so the bar steps like the ring.</p></section>
+</div>
+<script>
+BetterMate.hydrate();
+var v = 93, sv = document.getElementById('sv'), sb = sv.parentNode.querySelectorAll('button');
+sb[0].onclick = function () { v = Math.max(80, v - 1); sv.textContent = v + '°'; };
+sb[1].onclick = function () { v = Math.min(100, v + 1); sv.textContent = v + '°'; };
+document.getElementById('seg').onclick = function (e) { var b = e.target.closest('button'); if (!b) return; [].forEach.call(this.children, function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); };
+document.getElementById('sw').onclick = function () { this.setAttribute('aria-checked', this.getAttribute('aria-checked') === 'true' ? 'false' : 'true'); };
+var sheet = document.getElementById('sheet'); sheet.classList.add('is-open');
+document.getElementById('open').onclick = function () { sheet.classList.toggle('is-open'); };
+var lb = document.getElementById('lb'), lv = document.getElementById('lv'), p = 9, n = 0;
+lb.innerHTML = BetterMate.segbar(11, 20, 11);
+setInterval(function () { n++; p = Math.max(0, Math.min(12, 9 + 1.6 * Math.sin(n / 5) + 0.5 * Math.sin(n / 1.7))); lv.textContent = p.toFixed(1); var on = Math.round(p / 16 * 20); [].forEach.call(lb.children, function (s, i) { s.classList.toggle('on', i < on); }); }, 250);
+</script>
+</body>
+</html>

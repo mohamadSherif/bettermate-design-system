@@ -1,0 +1,13 @@
+<div class="bm-stage md">
+  <div class="md-face"><div id="face"></div></div>
+  <div class="bm-stack md-panel">
+    <div class="bm-seg bm-seg--block" role="group" aria-label="Motion style"><button class="bm-seg__item" id="m-step" aria-pressed="true">Stepped</button><button class="bm-seg__item" id="m-fade" aria-pressed="false">Opacity fades (today)</button></div>
+    <section class="bm-tile">
+      <div class="bm-stat bm-stat--sm"><span class="bm-eyebrow">Redrawn this frame</span><div class="bm-stat__row"><span class="bm-stat__value" id="area">0.0</span><span class="bm-stat__unit">% of the screen</span></div><div class="bm-segbar bm-segbar--fill" id="areabar"></div><span class="bm-data">Each segment is 2%. The notch is the 25% ceiling.</span></div>
+      <div class="bm-stat bm-stat--sm"><span class="bm-eyebrow">Estimated render time</span><div class="bm-stat__row"><span class="bm-stat__value" id="ms">0</span><span class="bm-stat__unit">ms</span><span class="bm-stat__target">/ 42.5</span></div></div>
+      <div class="bm-stat bm-stat--sm"><span class="bm-eyebrow">Last 48 scans: lit = a new frame reached the panel</span><div class="bm-segbar bm-segbar--fill" id="strip"></div><div class="bm-stat__row"><span class="bm-stat__value" id="fps">23.5</span><span class="bm-stat__unit">frames a second in the slowest half second shown</span></div></div>
+    </section>
+    <div class="bm-setting"><span><span class="bm-field__label">Show redrawn areas</span><p class="bm-help" id="what">Starting</p></span><button class="bm-switch" id="rects" role="switch" aria-checked="true" aria-label="Show redrawn areas"></button></div>
+    <p class="bm-help">A simulation of the T-RGB panel: one step every 42.5 ms, and a frame that takes longer than one scan holds the picture until it is done. Cost model: 0.7 ms per 1% of the screen redrawn, 1.2 ms when blended, from the 57 to 83 ms and 105 to 134 ms full-screen frames measured on 2026-11-07. Boiler and shot run faster than life.</p>
+  </div>
+</div>

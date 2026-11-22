@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field, input and switch</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <section class="bm-tile" style="width:366px">
+    <label class="bm-field"><span class="bm-field__label">Machine name</span><input class="bm-input" value="Kitchen Gaggia" aria-describedby="h1"><p class="bm-help" id="h1">Shown in the browser tab and on the Wi-Fi setup page.</p></label>
+    <div class="bm-field"><label class="bm-field__label" for="pw">Wi-Fi password</label><span class="bm-inputwrap"><input class="bm-input bm-input--reveal" id="pw" type="password" autocomplete="current-password" aria-describedby="h2"><button class="bm-btn bm-btn--icon bm-btn--quiet" type="button" data-reveal="pw" aria-pressed="false" aria-label="Show password"><span data-icon="eye"></span></button></span><p class="bm-help" id="h2">Leave blank to keep the saved one.</p></div>
+    <label class="bm-field"><span class="bm-field__label">Notes<span class="bm-field__opt">Optional</span></span><textarea class="bm-textarea" aria-describedby="h3">Light roast, ground at 2.4.</textarea><span class="bm-field__count" id="h3">27 / 120</span></label>
+  </section>
+  <section class="bm-tile" style="width:366px">
+    <label class="bm-field"><span class="bm-field__label">Profile name</span><input class="bm-input" value="First" aria-invalid="true" aria-describedby="e1"><span class="bm-field__msg bm-field__msg--error" id="e1"><span data-icon="circle-alert" data-size="14"></span>Another profile is called First. Choose a different name.</span></label>
+    <label class="bm-field"><span class="bm-field__label">Controller address</span><input class="bm-input" placeholder="192.168.1.20" inputmode="decimal" aria-describedby="w1"><span class="bm-field__msg bm-field__msg--warning" id="w1"><span data-icon="triangle-alert" data-size="14"></span>Empty means the machine searches for it at each start.</span></label>
+    <label class="bm-field"><span class="bm-field__label">Network password</span><input class="bm-input" type="password" value="hunter2hunter2" aria-describedby="s1"><span class="bm-field__msg bm-field__msg--success" id="s1"><span data-icon="check" data-size="14"></span>Connected to Home 5G.</span></label>
+    <label class="bm-field"><span class="bm-field__label">Firmware channel</span><input class="bm-input" value="Stable" disabled aria-describedby="d1"><p class="bm-help" id="d1">Set by the controller while it updates.</p></label>
+  </section>
+  <section class="bm-tile" style="width:296px">
+    <div class="bm-setting"><span><span class="bm-field__label" id="sw1">Wake on a schedule</span><p class="bm-help">Hot before your first coffee.</p></span><button class="bm-switch" role="switch" aria-checked="true" aria-labelledby="sw1"></button></div>
+    <div class="bm-setting"><span><span class="bm-field__label" id="sw2">Smart grind</span><p class="bm-help">Stops the grinder by weight.</p></span><button class="bm-switch" role="switch" aria-checked="false" aria-labelledby="sw2"></button></div>
+    <div class="bm-setting"><span><span class="bm-field__label" id="sw3" style="color:var(--ink-faint)">Stop by weight</span><p class="bm-help">Connect a scale to use this.</p></span><button class="bm-switch" role="switch" aria-checked="false" aria-labelledby="sw3" disabled></button></div>
+  </section>
+</div>
+<script>
+BetterMate.hydrate();
+[].forEach.call(document.querySelectorAll('.bm-switch:not([disabled])'), function (s) { s.onclick = function () { s.setAttribute('aria-checked', s.getAttribute('aria-checked') === 'true' ? 'false' : 'true'); }; });
+[].forEach.call(document.querySelectorAll('[data-reveal]'), function (b) { b.onclick = function () { var i = document.getElementById(b.getAttribute('data-reveal')), show = i.type === 'password'; i.type = show ? 'text' : 'password'; b.setAttribute('aria-pressed', show ? 'true' : 'false'); b.setAttribute('aria-label', show ? 'Hide password' : 'Show password'); b.innerHTML = BetterMate.icon(show ? 'eye-off' : 'eye'); }; });
+</script>
+</body>
+</html>

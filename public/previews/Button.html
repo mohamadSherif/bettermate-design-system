@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Button</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage" style="flex-direction:column;gap:var(--space-4)">
+  <div class="bm-rowx"><button class="bm-btn bm-btn--primary">Save</button><button class="bm-btn bm-btn--ink">New profile</button><button class="bm-btn">Tare</button><button class="bm-btn bm-btn--outline">Export</button><button class="bm-btn bm-btn--ghost">All shots</button><button class="bm-btn bm-btn--danger">Delete</button><button class="bm-btn" disabled>Disabled</button></div>
+  <div class="bm-rowx"><button class="bm-btn bm-btn--primary bm-btn--lg">Save</button><button class="bm-btn bm-btn--ink"><span data-icon="chart-column" data-size="20"></span>Analyze</button><button class="bm-btn bm-btn--sm"><span data-icon="droplet" data-size="18"></span>Flush</button><button class="bm-btn bm-btn--icon" aria-label="More"><span data-icon="more-horizontal"></span></button><button class="bm-btn bm-btn--icon bm-btn--ink" aria-label="Add"><span data-icon="plus"></span></button><button class="bm-btn bm-btn--icon bm-btn--quiet" aria-label="Close"><span data-icon="x"></span></button></div>
+  <div class="bm-rowx"><button class="bm-btn bm-btn--primary" aria-busy="true"><span data-loader data-size="18"></span>Saving</button><button class="bm-btn" aria-busy="true"><span data-loader data-size="18"></span>Scanning</button><button class="bm-btn bm-btn--primary" disabled>Save</button><button class="bm-btn bm-btn--outline" disabled>Export</button></div>
+</div>
+<script>
+BetterMate.hydrate();
+</script>
+</body>
+</html>

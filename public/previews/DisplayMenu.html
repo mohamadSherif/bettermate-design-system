@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Display: Menu and sheets</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <figure class="bm-fig"><div data-face='{"s": "menu", "active": "brew"}'></div><figcaption>Modes</figcaption></figure>
+  <figure class="bm-fig"><div data-face='{"s": "profiles", "index": 2, "count": 5, "name": "Adaptive v2", "facts": ["93°", "36 G", "29 S"], "phases": "Preinfuse · Bloom · Ramp"}'></div><figcaption>Profiles</figcaption></figure>
+  <figure class="bm-fig"><div data-face='{"s": "adjust", "title": "CLASSIC · UNSAVED", "field": 0, "value": "94", "unit": "°C"}'></div><figcaption>Adjust</figcaption></figure>
+  <figure class="bm-fig"><div data-face='{"s": "sheet", "title": "Save changes", "actions": ["SAVE", "SAVE AS NEW", "USE ONCE"]}'></div><figcaption>Save sheet</figcaption></figure>
+  <figure class="bm-fig"><div data-face='{"s": "warnings", "rows": [["ERROR", "Temperature unstable"], ["WARN", "Flush recommended"]]}'></div><figcaption>Warnings</figcaption></figure>
+  <figure class="bm-fig"><div data-face='{"s": "info", "ssid": "GaggiMate-Sim", "ip": "192.168.1.123"}'></div><figcaption>Information</figcaption></figure>
+</div>
+<script>BetterMate.hydrate();</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Display: Steam, Water, Grind</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <figure class="bm-fig"><div data-face='{"s": "mode", "name": "STEAM", "live": "128°", "heating": true, "target": "145", "tempF": 0.8, "targetF": 0.906, "note": "Heating"}'></div><figcaption>Steam, heating</figcaption></figure>
+  <figure class="bm-fig"><div data-face='{"s": "mode", "name": "WATER", "live": "80°", "target": "80", "tempF": 0.5, "targetF": 0.5, "action": ["START", "primary"]}'></div><figcaption>Water</figcaption></figure>
+  <figure class="bm-fig"><div data-face='{"s": "grind", "by": "time", "target": "0:25", "unit": "SECONDS", "progress": 0}'></div><figcaption>Grind, by time</figcaption></figure>
+  <figure class="bm-fig"><div data-face='{"s": "grind", "by": "weight", "target": "11.4", "unit": "OF 18.0 G", "progress": 0.63, "running": true, "live": "0:09"}'></div><figcaption>Grinding, by weight</figcaption></figure>
+</div>
+<script>BetterMate.hydrate();</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+{
+  "version": "v1.0.0",
+  "name": "BetterMate v1.0.0",
+  "published": "2026-11-21T19:17:53Z",
+  "url": "https://github.com/531dev/bettermate/releases/tag/v1.0.0",
+  "chip": "ESP32-S3",
+  "builds": [
+    {
+      "id": "screen",
+      "label": "With a screen",
+      "parts": [
+        {
+          "part": "bootloader",
+          "offset": 0,
+          "file": "/firmware/v1.0.0/display-bootloader.bin",
+          "size": 15104,
+          "sha256": "2a71d69b471e20c2bac7fb469f3c6a807b3ebee780e348e5889db0da849ca363"
+        },
+        {
+          "part": "partitions",
+          "offset": 32768,
+          "file": "/firmware/v1.0.0/display-partitions.bin",
+          "size": 3072,
+          "sha256": "bd0f7954aca2ef7d925ee21aaa1f3dc8822d1d6ce5cbbd26a135e5886bfff6ce"
+        },
+        {
+          "part": "boot_app0",
+          "offset": 57344,
+          "file": "/firmware/v1.0.0/boot_app0.bin",
+          "size": 8192,
+          "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+        },
+        {
+          "part": "firmware",
+          "offset": 65536,
+          "file": "/firmware/v1.0.0/display-firmware.bin",
+          "size": 3098896,
+          "sha256": "3183b1c8023615a1da2f9cc88fa539ff246e50e71cbf7820c9d53ef5490c6e55"
+        },
+        {
+          "part": "filesystem",
+          "offset": 13172736,
+          "file": "/firmware/v1.0.0/display-filesystem.bin",
+          "size": 3538944,
+          "sha256": "8ed5e8f6b5744cd323551bd71cc6ef91783eb3e594487a2c0a93197460a7c755"
+        }
+      ]
+    },
+    {
+      "id": "headless",
+      "label": "Without a screen",
+      "parts": [
+        {
+          "part": "bootloader",
+          "offset": 0,
+          "file": "/firmware/v1.0.0/display-headless-bootloader.bin",
+          "size": 15104,
+          "sha256": "2a71d69b471e20c2bac7fb469f3c6a807b3ebee780e348e5889db0da849ca363"
+        },
+        {
+          "part": "partitions",
+          "offset": 32768,
+          "file": "/firmware/v1.0.0/display-headless-partitions.bin",
+          "size": 3072,
+          "sha256": "bd0f7954aca2ef7d925ee21aaa1f3dc8822d1d6ce5cbbd26a135e5886bfff6ce"
+        },
+        {
+          "part": "boot_app0",
+          "offset": 57344,
+          "file": "/firmware/v1.0.0/boot_app0.bin",
+          "size": 8192,
+          "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+        },
+        {
+          "part": "firmware",
+          "offset": 65536,
+          "file": "/firmware/v1.0.0/display-headless-firmware.bin",
+          "size": 2587392,
+          "sha256": "9b7b560e22202602f92351cff4559883e14abc88f16923209c0b16b455984879"
+        },
+        {
+          "part": "filesystem",
+          "offset": 13172736,
+          "file": "/firmware/v1.0.0/display-headless-filesystem.bin",
+          "size": 3538944,
+          "sha256": "8ed5e8f6b5744cd323551bd71cc6ef91783eb3e594487a2c0a93197460a7c755"
+        }
+      ]
+    }
+  ]
+}

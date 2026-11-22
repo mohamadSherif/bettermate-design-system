@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dialog and sheet</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <div class="bm-stack" style="width:560px">
+    <span class="bm-eyebrow">Centred, from 600 px</span>
+    <div class="bm-float" style="height:300px">
+      <div style="padding:var(--space-3)"><section class="bm-tile"><h2 class="bm-sub">Profiles</h2><p class="bm-help">The page behind is inert.</p></section></div>
+      <div class="bm-scrim"></div>
+      <div class="bm-dialog" role="alertdialog" aria-modal="true" aria-labelledby="d1t" aria-describedby="d1b">
+        <h2 class="bm-dialog__title" id="d1t">Delete Adaptive v2?</h2>
+        <p class="bm-dialog__body" id="d1b">Its 14 shots stay in History. The profile cannot be brought back.</p>
+        <div class="bm-dialog__actions"><button class="bm-btn">Keep</button><button class="bm-btn bm-btn--danger">Delete profile</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="bm-stack" style="width:320px">
+    <span class="bm-eyebrow">A sheet, on a phone</span>
+    <div class="bm-float" style="height:300px">
+      <div style="padding:var(--space-3)"><section class="bm-tile"><h2 class="bm-sub">First</h2><p class="bm-help">93° · 36 g · 30 s, changed.</p></section></div>
+      <div class="bm-scrim"></div>
+      <div class="bm-dialog bm-dialog--sheet" role="dialog" aria-modal="true" aria-labelledby="d2t">
+        <h2 class="bm-dialog__title" id="d2t">Save changes</h2>
+        <div class="bm-dialog__actions bm-dialog__actions--stack"><button class="bm-btn bm-btn--primary">Save</button><button class="bm-btn">Save as new</button><button class="bm-btn bm-btn--ghost">Use once</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+BetterMate.hydrate();
+</script>
+</body>
+</html>

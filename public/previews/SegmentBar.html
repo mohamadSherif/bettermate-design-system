@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Segment bar</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <div class="bm-stack" style="width:220px"><span class="bm-eyebrow">Level, 20 segments</span><div class="bm-segbar bm-segbar--fill" data-segbar="19/20"></div><div class="bm-segbar bm-segbar--fill" data-segbar="4/20"></div></div>
+  <div class="bm-stack" style="width:220px"><span class="bm-eyebrow">Value against a target</span><div class="bm-segbar bm-segbar--fill bm-segbar--heat" data-segbar="10/20/12"></div><div class="bm-segbar bm-segbar--fill bm-segbar--primary" data-segbar="11/20/11"></div></div>
+  <div class="bm-stack" style="width:220px"><span class="bm-eyebrow">Series tones</span><div class="bm-segbar bm-segbar--fill bm-segbar--flow" data-segbar="8/20"></div><div class="bm-segbar bm-segbar--fill bm-segbar--weight" data-segbar="12/20/19"></div></div>
+  <div class="bm-stack" style="width:220px"><span class="bm-eyebrow">Dot matrix: 14 shots this week</span><div class="bm-dots" style="--cols:14" data-dots="14/28"></div></div>
+  <section class="bm-tile" style="width:366px"><div class="bm-progress"><div class="bm-progress__head"><span class="bm-sub" id="up">Installing 1.8.0</span><span class="bm-data">62%</span></div><div class="bm-segbar bm-segbar--fill" role="progressbar" aria-labelledby="up" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62" data-segbar="15/24"></div><p class="bm-help">Keep the machine on. It restarts when this is done.</p></div></section>
+</div>
+<script>
+BetterMate.hydrate();
+</script>
+</body>
+</html>

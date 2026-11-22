@@ -1,0 +1,322 @@
+[
+ {
+  "name": "ActionBanner",
+  "title": "Action banner",
+  "group": "Actions",
+  "height": 300,
+  "width": null,
+  "summary": "The one cobalt thing on a view: a full-width banner that says what you can do next, with a disc that shows the action's glyph."
+ },
+ {
+  "name": "Button",
+  "title": "Button",
+  "group": "Actions",
+  "height": 224,
+  "width": null,
+  "summary": "Pill buttons for everything that is not the page's main action."
+ },
+ {
+  "name": "Chart",
+  "title": "Chart",
+  "group": "Data",
+  "height": 364,
+  "width": null,
+  "summary": "A shot drawn as lines: pressure, temperature, flow and weight against time."
+ },
+ {
+  "name": "Chip",
+  "title": "Chip",
+  "group": "Data",
+  "height": 112,
+  "width": null,
+  "summary": "A status word in a small tinted box: uppercase mono, one or two words."
+ },
+ {
+  "name": "Cover",
+  "title": "BetterMate",
+  "group": "Other",
+  "height": 288,
+  "width": null,
+  "summary": ""
+ },
+ {
+  "name": "Dial",
+  "title": "Dial",
+  "group": "Data",
+  "height": 300,
+  "width": 1392,
+  "summary": "The machine's round display inside a web tile: the same tick ring, with one reading in the middle."
+ },
+ {
+  "name": "Dialog",
+  "title": "Dialog and sheet",
+  "group": "Overlays",
+  "height": 376,
+  "width": null,
+  "summary": "A question that must be answered before anything else: confirm a deletion, choose how to save, acknowledge a fault. On a phone it is a sheet at the bottom of the screen."
+ },
+ {
+  "name": "DisplayBrew",
+  "title": "Display: Brew",
+  "group": "Round display",
+  "height": 380,
+  "width": 1296,
+  "summary": "The idle Brew screen: boiler temperature as the reading, the profile under it, START as the action, on the split ring."
+ },
+ {
+  "name": "DisplayMenu",
+  "title": "Display: Menu and sheets",
+  "group": "Round display",
+  "height": 760,
+  "width": 1296,
+  "summary": "Everything reached from the handle: the mode menu, Profiles, Adjust, the save sheet, Warnings and Information."
+ },
+ {
+  "name": "DisplayModes",
+  "title": "Display: Steam, Water, Grind",
+  "group": "Round display",
+  "height": 380,
+  "width": 1296,
+  "summary": "Steam, Water and Grind share one layout: the target between minus and plus on the centre line, the live value above it, and a single ring."
+ },
+ {
+  "name": "DisplayShot",
+  "title": "Display: Shot",
+  "group": "Round display",
+  "height": 380,
+  "width": 1296,
+  "summary": "A shot in progress and its result: elapsed time as the reading, phase bars beneath it, pressure and weight as second-rank values, STOP in ink."
+ },
+ {
+  "name": "DisplayStandby",
+  "title": "Display: Standby",
+  "group": "Round display",
+  "height": 380,
+  "width": 1296,
+  "summary": "The display at rest: the clock as the one reading, the boiler's residual heat greyed on a single ring, and WAKE as the one action."
+ },
+ {
+  "name": "DisplayStates",
+  "title": "Display: product states",
+  "group": "Round display",
+  "height": 708,
+  "width": 1296,
+  "summary": "The display when things are not normal: connecting, Wi-Fi setup, a command on its way, a warning or update waiting, a blocking fault and a firmware update."
+ },
+ {
+  "name": "EmptyState",
+  "title": "Empty state",
+  "group": "Feedback",
+  "height": 380,
+  "width": null,
+  "summary": "What a tile or a page shows when it has nothing to list yet: one sentence about what will appear, and at most one way to make it appear."
+ },
+ {
+  "name": "Field",
+  "title": "Field, input and switch",
+  "group": "Forms",
+  "height": 544,
+  "width": null,
+  "summary": "Labelled inputs and switches for Settings, the profile editor and setup."
+ },
+ {
+  "name": "Icon",
+  "title": "Icon",
+  "group": "Assets",
+  "height": 690,
+  "width": null,
+  "summary": "The 53 stroke glyphs of the interface."
+ },
+ {
+  "name": "ListRow",
+  "title": "List row",
+  "group": "Data",
+  "height": 268,
+  "width": null,
+  "summary": "One line of a list: an icon disc, a title, a line of mono facts and something at the end."
+ },
+ {
+  "name": "Loader",
+  "title": "Loader",
+  "group": "Feedback",
+  "height": 184,
+  "width": null,
+  "summary": "The sign that the machine is working on something you asked for: three lit ticks stepping round a small ring. It is the display's busy comet, drawn for the web."
+ },
+ {
+  "name": "Menu",
+  "title": "Menu",
+  "group": "Overlays",
+  "height": 330,
+  "width": null,
+  "summary": "A short list of actions on one thing, opened from a button: the \"More\" at the end of a profile's row, the menu behind the top bar."
+ },
+ {
+  "name": "ModeBar",
+  "title": "Mode bar",
+  "group": "Navigation",
+  "height": 292,
+  "width": null,
+  "summary": "The machine's five modes in one floating pill: Standby, Brew, Steam, Water, Grind. The machine's mode is the `ink` item."
+ },
+ {
+  "name": "MotionDisplay",
+  "title": "Motion on the display",
+  "group": "Motion",
+  "height": 560,
+  "width": null,
+  "summary": "A simulation of the T-RGB panel running the display's motion: 23.5 steps a second, with the area each frame redraws."
+ },
+ {
+  "name": "MotionWeb",
+  "title": "Motion on the web",
+  "group": "Motion",
+  "height": 330,
+  "width": null,
+  "summary": "The web's four motions at their real durations: press, select, enter and leave, and a live reading."
+ },
+ {
+  "name": "Nav",
+  "title": "Nav and top bar",
+  "group": "Navigation",
+  "height": 380,
+  "width": null,
+  "summary": "The four pages of the app: Dashboard, Profiles, History, Settings. A sidebar on desktop, a menu behind the top bar on smaller screens."
+ },
+ {
+  "name": "Notice",
+  "title": "Notice",
+  "group": "Feedback",
+  "height": 380,
+  "width": null,
+  "summary": "A message that stays on the page until its cause is gone: the machine is offline, a fault blocks brewing, an update is ready."
+ },
+ {
+  "name": "NumberField",
+  "title": "Number field",
+  "group": "Forms",
+  "height": 268,
+  "width": null,
+  "summary": "A typed number with its unit inside the field: dose, yield, a phase's duration, a pressure target."
+ },
+ {
+  "name": "SegmentBar",
+  "title": "Segment bar",
+  "group": "Data",
+  "height": 268,
+  "width": null,
+  "summary": "A quantity as a row of discrete segments: lit in a tone, unlit in `track`, with an optional target mark."
+ },
+ {
+  "name": "Segmented",
+  "title": "Segmented control",
+  "group": "Navigation",
+  "height": 330,
+  "width": null,
+  "summary": "A pill-shaped choice of two or three: the selected item is `ink`."
+ },
+ {
+  "name": "Select",
+  "title": "Select",
+  "group": "Forms",
+  "height": 292,
+  "width": null,
+  "summary": "One choice from a list that is too long, or too unpredictable, for a Segmented control."
+ },
+ {
+  "name": "StageTrack",
+  "title": "Stage track",
+  "group": "Data",
+  "height": 120,
+  "width": null,
+  "summary": "The phases of a process as a row of bars: done, running, to come."
+ },
+ {
+  "name": "StatTile",
+  "title": "Stat tile",
+  "group": "Data",
+  "height": 470,
+  "width": null,
+  "summary": "A reading in a tile: mono label, large tabular numeral with a raised unit, and a segment bar."
+ },
+ {
+  "name": "States",
+  "title": "States in three themes",
+  "group": "Foundations",
+  "height": 2350,
+  "width": null,
+  "summary": "Every control in every state, in the three themes. One rule makes all of them, and it lives in one block of `bundle.css`."
+ },
+ {
+  "name": "Stepper",
+  "title": "Stepper",
+  "group": "Forms",
+  "height": 124,
+  "width": null,
+  "summary": "Minus, a value, plus: for a number changed in small steps, such as a target temperature or a grind weight."
+ },
+ {
+  "name": "TickRing",
+  "title": "Tick ring",
+  "group": "Round display",
+  "height": 380,
+  "width": 1296,
+  "summary": "The ring of ticks on the rim of the display, and around the web Dial: lit ticks are the value, a longer ink tick is the target."
+ },
+ {
+  "name": "Tile",
+  "title": "Tile and cell",
+  "group": "Layout",
+  "height": 252,
+  "width": null,
+  "summary": "The unit of every page: a rounded `surface-1` block on the `surface-0` ground, holding one thing."
+ },
+ {
+  "name": "Toast",
+  "title": "Toast",
+  "group": "Feedback",
+  "height": 312,
+  "width": null,
+  "summary": "A short confirmation that leaves by itself: something just happened, and nothing needs doing."
+ },
+ {
+  "name": "Tooltip",
+  "title": "Tooltip",
+  "group": "Overlays",
+  "height": 128,
+  "width": null,
+  "summary": "The name of an icon-only control, shown on hover and on keyboard focus."
+ },
+ {
+  "name": "WebDesktop",
+  "title": "Web: desktop dashboard",
+  "group": "Web UI",
+  "height": 830,
+  "width": 1240,
+  "summary": "The dashboard on desktop: a sidebar tile and a 12 column bento grid, with the mode bar floating at the bottom centre."
+ },
+ {
+  "name": "WebPages",
+  "title": "Web: profiles, history, settings",
+  "group": "Web UI",
+  "height": 552,
+  "width": 1160,
+  "summary": "Profiles, Shot history and Settings: a `title`, then tiles of ListRows or fields."
+ },
+ {
+  "name": "WebPhone",
+  "title": "Web: phone dashboard",
+  "group": "Web UI",
+  "height": 1110,
+  "width": 1220,
+  "summary": "The dashboard on a phone, at rest and during a shot: one column of tiles with the mode bar floating over it."
+ },
+ {
+  "name": "WebStates",
+  "title": "Web: product states",
+  "group": "Web UI",
+  "height": 1348,
+  "width": null,
+  "summary": "What the web app shows when things are not normal: offline, a blocking fault, a command on its way, first start, Wi-Fi setup and a firmware update. All six are drawn at 320 px."
+ }
+]

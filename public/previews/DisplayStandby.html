@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Display: Standby</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <figure class="bm-fig"><div data-face='{"s": "standby", "time": "10:51", "date": "THU 12 NOV", "line": "Boiler off · 21°", "temp": 0.13}'></div><figcaption>Asleep</figcaption></figure>
+  <figure class="bm-fig"><div data-face='{"s": "standby", "time": "06:12", "date": "FRI 13 NOV", "line": "Wakes at 06:30", "temp": 0.13}'></div><figcaption>Wake scheduled</figcaption></figure>
+  <figure class="bm-fig"><div data-face='{"s": "standby", "time": "10:51", "date": "THU 12 NOV", "line": "Waiting for the controller", "temp": 0.04, "busy": true}'></div><figcaption>Connecting</figcaption></figure>
+  <figure class="bm-fig"><div data-face='{"s": "standby", "time": "10:51", "rest": true}'></div><figcaption>AMOLED rest</figcaption></figure>
+</div>
+<script>BetterMate.hydrate();</script>
+</body>
+</html>

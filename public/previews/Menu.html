@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <div class="bm-stack" style="width:320px;align-items:flex-end">
+    <section class="bm-tile" style="width:100%"><div class="bm-setting"><span><span class="bm-item__title">Adaptive v2</span><div class="bm-item__meta">93° · 36 g · 3 phases</div></span><button class="bm-btn bm-btn--icon bm-btn--quiet" aria-label="More actions for Adaptive v2" aria-haspopup="menu" aria-expanded="true" aria-controls="m1"><span data-icon="more-horizontal"></span></button></div></section>
+    <div class="bm-menu" id="m1" role="menu" style="margin-top:calc(var(--space-5) * -1);margin-right:var(--space-5)">
+      <button class="bm-menu__item" role="menuitem"><span data-icon="pencil" data-size="20"></span><span class="bm-menu__label">Edit</span></button>
+      <button class="bm-menu__item is-hover" role="menuitem"><span data-icon="info" data-size="20"></span><span class="bm-menu__label">Details</span></button>
+      <button class="bm-menu__item" role="menuitem"><span data-icon="download" data-size="20"></span><span class="bm-menu__label">Export as JSON</span></button>
+      <div class="bm-menu__sep" role="separator"></div>
+      <button class="bm-menu__item bm-menu__item--danger" role="menuitem"><span data-icon="trash-2" data-size="20"></span><span class="bm-menu__label">Delete profile</span></button>
+    </div>
+  </div>
+  <div class="bm-stack" style="width:280px">
+    <span class="bm-eyebrow">With a checked item and a hint</span>
+    <div class="bm-menu" role="menu" aria-label="Sort shots">
+      <button class="bm-menu__item" role="menuitemradio" aria-checked="true"><span class="bm-menu__label">Newest first</span><span data-icon="check" data-size="20"></span></button>
+      <button class="bm-menu__item" role="menuitemradio" aria-checked="false"><span class="bm-menu__label">Longest first</span></button>
+      <button class="bm-menu__item" role="menuitemradio" aria-checked="false"><span class="bm-menu__label">By profile</span><span class="bm-menu__hint">12</span></button>
+      <button class="bm-menu__item" role="menuitemradio" aria-checked="false" aria-disabled="true"><span class="bm-menu__label">By rating</span></button>
+    </div>
+  </div>
+</div>
+<script>
+BetterMate.hydrate();
+</script>
+</body>
+</html>

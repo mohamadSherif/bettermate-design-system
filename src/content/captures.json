@@ -1,0 +1,170 @@
+{
+ "/compare/stock/display/standby.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/stock/display/brew.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/stock/display/brew-adjust.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/stock/display/status-brewing.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/stock/display/status-finished.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/stock/display/menu.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/stock/display/steam-heating.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/stock/display/steam-active.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/stock/display/water.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/stock/display/grind.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/stock/display/profile.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/stock/display/info.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/bettermate/display/standby.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/bettermate/display/brew.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/bettermate/display/adjust.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/bettermate/display/shot-pulling.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/bettermate/display/shot-complete.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/bettermate/display/menu.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/bettermate/display/steam-heating.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/bettermate/display/steam-steaming.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/bettermate/display/water.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/bettermate/display/grind.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/bettermate/display/profiles.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/bettermate/display/info.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/bettermate/display/brew-light.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/bettermate/display/fault.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/bettermate/display/warnings.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/bettermate/display/wifi-setup.webp": {
+  "w": 480,
+  "h": 480
+ },
+ "/compare/stock/web/dashboard-desktop.webp": {
+  "w": 1600,
+  "h": 875
+ },
+ "/compare/stock/web/dashboard-desktop-idle.webp": {
+  "w": 1600,
+  "h": 875
+ },
+ "/compare/stock/web/dashboard-phone.webp": {
+  "w": 390,
+  "h": 876
+ },
+ "/compare/stock/web/navigation-phone.webp": {
+  "w": 390,
+  "h": 876
+ },
+ "/compare/bettermate/web/dashboard-desktop.webp": {
+  "w": 1440,
+  "h": 1000
+ },
+ "/compare/bettermate/web/dashboard-desktop-dark.webp": {
+  "w": 1440,
+  "h": 1000
+ },
+ "/compare/bettermate/web/brew-active.webp": {
+  "w": 1440,
+  "h": 1000
+ },
+ "/compare/bettermate/web/dashboard-phone.webp": {
+  "w": 390,
+  "h": 1236
+ },
+ "/compare/bettermate/web/navigation-phone.webp": {
+  "w": 390,
+  "h": 1047
+ },
+ "/compare/bettermate/web/profiles.webp": {
+  "w": 1440,
+  "h": 1000
+ },
+ "/compare/bettermate/web/history.webp": {
+  "w": 1440,
+  "h": 1109
+ },
+ "/compare/bettermate/web/settings.webp": {
+  "w": 1440,
+  "h": 2096
+ },
+ "/compare/bettermate/web/analyzer.webp": {
+  "w": 1440,
+  "h": 1630
+ },
+ "/compare/bettermate/web/setup-wifi.webp": {
+  "w": 390,
+  "h": 844
+ }
+}

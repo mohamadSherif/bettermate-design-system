@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web: product states</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <figure class="bm-stack" style="margin:0;align-items:center">
+<div class="bm-phone bm-phone--320">
+  <div class="bm-topbar"><button class="bm-btn bm-btn--icon bm-btn--quiet" aria-label="Menu"><span data-icon="menu"></span></button><span><img class="bm-wm bm-wm--light" src="/design/logos/bettermate-wordmark.svg" alt="BetterMate"><img class="bm-wm bm-wm--dark" src="/design/logos/bettermate-wordmark-inverse.svg" alt="BetterMate"></span><span style="width:var(--control-md)"></span></div>
+  <div class="bm-notice bm-notice--page bm-notice--danger" role="alert"><span class="bm-notice__icon" data-icon="circle-alert" data-size="20"></span><div class="bm-notice__body"><span class="bm-notice__title">The machine is offline</span><span class="bm-notice__text">Last seen 14:41. Check that it is switched on and on Wi-Fi.</span></div></div>
+  <section class="bm-tile" aria-label="Machine">
+    <div class="bm-tile__head"><span class="bm-eyebrow">Brew · First</span><span class="bm-chip bm-chip--danger"><span data-icon="circle-alert" data-size="14"></span>Offline</span></div>
+    <div class="bm-dial" data-ring='{"left":[0,-1,"heat"],"right":[0,-1,"primary"]}'><div class="bm-dial__center"><span class="bm-eyebrow">Boiler</span><span class="bm-dial__value">—</span><span class="bm-dial__plan">Last seen 14:41</span></div></div>
+  </section>
+  <button class="bm-cta"><span class="bm-cta__text"><span class="bm-cta__label">Try again</span><span class="bm-cta__sub">Looks for the machine on Wi-Fi</span></span><span class="bm-cta__disc" data-icon="refresh-cw"></span></button>
+  <nav class="bm-modebar" aria-label="Machine mode">
+  <button class="bm-modebar__item" aria-pressed="false" aria-disabled="true"><span data-icon="power" data-size="22"></span>Standby</button>
+  <button class="bm-modebar__item" aria-pressed="false" aria-disabled="true"><span data-icon="coffee" data-size="22"></span>Brew</button>
+  <button class="bm-modebar__item" aria-pressed="false" aria-disabled="true"><span data-icon="wind" data-size="22"></span>Steam</button>
+  <button class="bm-modebar__item" aria-pressed="false" aria-disabled="true"><span data-icon="droplet" data-size="22"></span>Water</button>
+  <button class="bm-modebar__item" aria-pressed="false" aria-disabled="true"><span data-icon="bean" data-size="22"></span>Grind</button>
+</nav>
+</div>
+<figcaption class="bm-eyebrow">Offline</figcaption></figure>
+  <figure class="bm-stack" style="margin:0;align-items:center">
+<div class="bm-phone bm-phone--320">
+  <div class="bm-topbar"><button class="bm-btn bm-btn--icon bm-btn--quiet" aria-label="Menu"><span data-icon="menu"></span></button><span><img class="bm-wm bm-wm--light" src="/design/logos/bettermate-wordmark.svg" alt="BetterMate"><img class="bm-wm bm-wm--dark" src="/design/logos/bettermate-wordmark-inverse.svg" alt="BetterMate"></span><span style="width:var(--control-md)"></span></div>
+  <div class="bm-notice bm-notice--page bm-notice--danger" role="alert"><span class="bm-notice__icon" data-icon="circle-alert" data-size="20"></span><div class="bm-notice__body"><span class="bm-notice__title">Boiler sensor lost</span><span class="bm-notice__text">Heating is off. Check the sensor cable, then restart the machine.</span><div class="bm-notice__actions"><button class="bm-btn bm-btn--outline">Restart</button><button class="bm-btn bm-btn--ghost">Details</button></div></div></div>
+  <section class="bm-tile" aria-label="Machine">
+    <div class="bm-tile__head"><span class="bm-eyebrow">Brew · First</span><span class="bm-chip bm-chip--danger"><span data-icon="circle-alert" data-size="14"></span>Fault</span></div>
+    <div class="bm-dial" data-ring='{"left":[0,-1,"heat"],"right":[0,-1,"primary"]}'><div class="bm-dial__center"><span class="bm-eyebrow">Boiler</span><span class="bm-dial__value">—</span><span class="bm-dial__plan">Heating is off</span></div></div>
+  </section>
+  <button class="bm-cta" disabled><span class="bm-cta__text"><span class="bm-cta__label">Start shot</span><span class="bm-cta__sub">Fix the fault to brew</span></span><span class="bm-cta__disc" data-icon="play"></span></button>
+  <nav class="bm-modebar" aria-label="Machine mode">
+  <button class="bm-modebar__item" aria-pressed="true"><span data-icon="power" data-size="22"></span>Standby</button>
+  <button class="bm-modebar__item" aria-pressed="false" aria-disabled="true"><span data-icon="coffee" data-size="22"></span>Brew</button>
+  <button class="bm-modebar__item" aria-pressed="false" aria-disabled="true"><span data-icon="wind" data-size="22"></span>Steam</button>
+  <button class="bm-modebar__item" aria-pressed="false" aria-disabled="true"><span data-icon="droplet" data-size="22"></span>Water</button>
+  <button class="bm-modebar__item" aria-pressed="false" aria-disabled="true"><span data-icon="bean" data-size="22"></span>Grind</button>
+</nav>
+</div>
+<figcaption class="bm-eyebrow">Blocking fault</figcaption></figure>
+  <figure class="bm-stack" style="margin:0;align-items:center">
+<div class="bm-phone bm-phone--320">
+  <div class="bm-topbar"><button class="bm-btn bm-btn--icon bm-btn--quiet" aria-label="Menu"><span data-icon="menu"></span></button><span><img class="bm-wm bm-wm--light" src="/design/logos/bettermate-wordmark.svg" alt="BetterMate"><img class="bm-wm bm-wm--dark" src="/design/logos/bettermate-wordmark-inverse.svg" alt="BetterMate"></span><span style="width:var(--control-md)"></span></div>
+  <section class="bm-tile" aria-label="Machine">
+    <div class="bm-tile__head"><span class="bm-eyebrow">Brew · First</span><span class="bm-chip bm-chip--success"><i class="bm-chip__dot"></i>Ready</span></div>
+    <div class="bm-dial" data-ring='{"left":[0.58,0.58,"heat"],"right":[0,-1,"primary"]}'><div class="bm-dial__center"><span class="bm-eyebrow">Boiler</span><span class="bm-dial__value">93°</span><span class="bm-dial__plan">18.5 g in · 36 g out · 30 s</span></div></div>
+  </section>
+  <button class="bm-cta" aria-busy="true"><span class="bm-cta__text"><span class="bm-cta__label">Starting</span><span class="bm-cta__sub">Waiting for the machine</span></span><span class="bm-cta__disc" data-loader data-size="24"></span></button>
+  <nav class="bm-modebar" aria-label="Machine mode">
+  <button class="bm-modebar__item" aria-pressed="false" aria-disabled="true"><span data-icon="power" data-size="22"></span>Standby</button>
+  <button class="bm-modebar__item" aria-pressed="true"><span data-icon="coffee" data-size="22"></span>Brew</button>
+  <button class="bm-modebar__item" aria-pressed="false"><span data-icon="wind" data-size="22"></span>Steam</button>
+  <button class="bm-modebar__item" aria-pressed="false" aria-disabled="true"><span data-icon="droplet" data-size="22"></span>Water</button>
+  <button class="bm-modebar__item" aria-pressed="false" aria-disabled="true"><span data-icon="bean" data-size="22"></span>Grind</button>
+</nav>
+</div>
+<figcaption class="bm-eyebrow">Command pending</figcaption></figure>
+  <figure class="bm-stack" style="margin:0;align-items:center">
+<div class="bm-phone bm-phone--320 bm-phone--bare">
+  <div class="bm-topbar" style="justify-content:center"><img class="bm-wm bm-wm--light" src="/design/logos/bettermate-wordmark.svg" alt="BetterMate"><img class="bm-wm bm-wm--dark" src="/design/logos/bettermate-wordmark-inverse.svg" alt="BetterMate"></div>
+  <section class="bm-tile">
+    <span class="bm-eyebrow">First start</span>
+    <h1 class="bm-heading">Set up your machine</h1>
+    <p class="bm-help">Three steps, about two minutes. You can change all of it later in Settings.</p>
+    <div class="bm-list" role="list">
+      <div class="bm-item" role="listitem"><span class="bm-item__icon" data-icon="wifi" data-size="20"></span><span class="bm-item__body"><div class="bm-item__title">Wi-Fi</div><div class="bm-item__meta">Join your network</div></span><span class="bm-item__end">1</span></div>
+      <div class="bm-item" role="listitem"><span class="bm-item__icon" data-icon="coffee" data-size="20"></span><span class="bm-item__body"><div class="bm-item__title">Machine</div><div class="bm-item__meta">Name, clock, boiler</div></span><span class="bm-item__end">2</span></div>
+      <div class="bm-item" role="listitem"><span class="bm-item__icon" data-icon="scale" data-size="20"></span><span class="bm-item__body"><div class="bm-item__title">Scale</div><div class="bm-item__meta">Optional</div></span><span class="bm-item__end">3</span></div>
+    </div>
+  </section>
+  <button class="bm-btn bm-btn--primary bm-btn--lg bm-btn--block">Start setup</button>
+</div>
+<figcaption class="bm-eyebrow">First start</figcaption></figure>
+  <figure class="bm-stack" style="margin:0;align-items:center">
+<div class="bm-phone bm-phone--320 bm-phone--bare">
+  <div class="bm-topbar"><button class="bm-btn bm-btn--icon bm-btn--quiet" aria-label="Back"><span data-icon="arrow-left"></span></button><span><img class="bm-wm bm-wm--light" src="/design/logos/bettermate-wordmark.svg" alt="BetterMate"><img class="bm-wm bm-wm--dark" src="/design/logos/bettermate-wordmark-inverse.svg" alt="BetterMate"></span><span style="width:var(--control-md)"></span></div>
+  <section class="bm-tile">
+    <span class="bm-eyebrow">Step 1 of 3</span>
+    <h1 class="bm-heading">Join your Wi-Fi</h1>
+    <label class="bm-field"><span class="bm-field__label">Network</span><span class="bm-inputwrap"><select class="bm-select"><option>Home 5G</option><option>Home 2.4</option><option>Workshop</option><option>Other network</option></select><span class="bm-input__icon" data-icon="chevron-down" data-size="20"></span></span></label>
+    <div class="bm-field"><label class="bm-field__label" for="wpw">Password</label><span class="bm-inputwrap"><input class="bm-input bm-input--reveal" id="wpw" type="password" value="hunter2" autocomplete="current-password" aria-invalid="true" aria-describedby="wpe"><button class="bm-btn bm-btn--icon bm-btn--quiet" type="button" aria-pressed="false" aria-label="Show password"><span data-icon="eye"></span></button></span><span class="bm-field__msg bm-field__msg--error" id="wpe"><span data-icon="circle-alert" data-size="14"></span>That password did not work. Check it and try again.</span></div>
+  </section>
+  <button class="bm-btn bm-btn--primary bm-btn--lg bm-btn--block">Connect</button>
+  <button class="bm-btn bm-btn--ghost bm-btn--block">Skip for now</button>
+</div>
+<figcaption class="bm-eyebrow">Wi-Fi setup, with an error</figcaption></figure>
+  <figure class="bm-stack" style="margin:0;align-items:center">
+<div class="bm-phone bm-phone--320 bm-phone--bare">
+  <div class="bm-topbar" style="justify-content:center"><img class="bm-wm bm-wm--light" src="/design/logos/bettermate-wordmark.svg" alt="BetterMate"><img class="bm-wm bm-wm--dark" src="/design/logos/bettermate-wordmark-inverse.svg" alt="BetterMate"></div>
+  <section class="bm-tile">
+    <span class="bm-eyebrow">Firmware</span>
+    <div class="bm-progress"><div class="bm-progress__head"><h1 class="bm-heading" id="fw">Installing 1.8.0</h1><span class="bm-data">62%</span></div><div class="bm-segbar bm-segbar--fill" role="progressbar" aria-labelledby="fw" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62" data-segbar="15/24"></div></div>
+    <p class="bm-help">Keep the machine on. It restarts when this is done, in about 2 min, and this page reconnects by itself.</p>
+  </section>
+  <div class="bm-notice bm-notice--page"><span class="bm-notice__icon" data-icon="info" data-size="20"></span><div class="bm-notice__body"><span class="bm-notice__title">The machine is busy</span><span class="bm-notice__text">Brewing, steaming and settings are back when the update ends.</span></div></div>
+</div>
+<figcaption class="bm-eyebrow">Firmware update</figcaption></figure>
+</div>
+<script>
+BetterMate.hydrate();
+</script>
+</body>
+</html>

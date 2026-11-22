@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notice</title>
+<link rel="stylesheet" href="/design/tokens.css">
+<link rel="stylesheet" href="/design/bundle.css">
+<style>html,body{background:var(--surface-0)}body{overflow-x:auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .bm-wm--light{display:none}:root:not([data-theme]) .bm-wm--dark{display:block}}</style>
+<script>
+/* Follow the theme of the page this preview sits in. */
+(function () {
+  var html = document.documentElement;
+  function sync() {
+    try {
+      var t = parent.document.documentElement.getAttribute('data-theme');
+      if (t) html.setAttribute('data-theme', t); else html.removeAttribute('data-theme');
+    } catch (e) {}
+  }
+  sync();
+  try { new MutationObserver(sync).observe(parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) {}
+})();
+</script>
+<script src="/design/bundle.js"></script>
+</head>
+<body>
+<div class="bm-stage">
+  <section class="bm-tile" style="width:366px">
+    <div class="bm-notice" role="status"><span class="bm-notice__icon" data-loader data-size="20"></span><div class="bm-notice__body"><span class="bm-notice__title">Connecting to the machine</span><span class="bm-notice__text">This takes a few seconds after it wakes.</span></div></div>
+    <div class="bm-notice bm-notice--info"><span class="bm-notice__icon" data-icon="info" data-size="20"></span><div class="bm-notice__body"><span class="bm-notice__title">Version 1.8.0 is ready</span><span class="bm-notice__text">Adds flow profiling. Installing takes about 2 min.</span><div class="bm-notice__actions"><button class="bm-btn bm-btn--outline">Install</button><button class="bm-btn bm-btn--ghost">What's new</button></div></div></div>
+    <div class="bm-notice bm-notice--success"><span class="bm-notice__icon" data-icon="check" data-size="20"></span><div class="bm-notice__body"><span class="bm-notice__title">Updated to 1.8.0</span><span class="bm-notice__text">The machine restarted and is heating.</span></div></div>
+  </section>
+  <section class="bm-tile" style="width:366px">
+    <div class="bm-notice bm-notice--warning"><span class="bm-notice__icon" data-icon="triangle-alert" data-size="20"></span><div class="bm-notice__body"><span class="bm-notice__title">Water low</span><span class="bm-notice__text">About two shots left. Fill the tank before the next one.</span></div><button class="bm-btn bm-btn--icon bm-btn--quiet" aria-label="Dismiss" style="margin:calc(var(--space-2) * -1) calc(var(--space-2) * -1) 0 0"><span data-icon="x" data-size="20"></span></button></div>
+    <div class="bm-notice bm-notice--danger" role="alert"><span class="bm-notice__icon" data-icon="circle-alert" data-size="20"></span><div class="bm-notice__body"><span class="bm-notice__title">Boiler sensor lost</span><span class="bm-notice__text">Heating is off. Check the sensor cable, then restart the machine.</span><div class="bm-notice__actions"><button class="bm-btn bm-btn--outline">Restart</button><button class="bm-btn bm-btn--ghost">Details</button></div></div></div>
+  </section>
+  <div class="bm-stack" style="width:296px">
+    <span class="bm-eyebrow">Across a page</span>
+    <div class="bm-notice bm-notice--page bm-notice--danger" role="alert"><span class="bm-notice__icon" data-icon="circle-alert" data-size="20"></span><div class="bm-notice__body"><span class="bm-notice__title">The machine is offline</span><span class="bm-notice__text">Last seen 14:41. Check that it is switched on and on Wi-Fi.</span><div class="bm-notice__actions"><button class="bm-btn bm-btn--outline">Try again</button></div></div></div>
+  </div>
+</div>
+<script>
+BetterMate.hydrate();
+</script>
+</body>
+</html>
