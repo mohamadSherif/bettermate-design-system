@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "@/styles/tokens.css";
 import "@/styles/bundle.css";
 import "./globals.css";
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <p>Fonts: Funnel Display and Geist Mono, SIL Open Font License.</p>
           </div>
         </footer>
+        <Analytics />
       </body>
     </html>
   );

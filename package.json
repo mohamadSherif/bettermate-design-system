@@ -11,6 +11,7 @@
     "firmware": "node scripts/fetch-firmware.mjs"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "esptool-js": "^0.7.1",
     "marked": "^15.0.12",
     "next": "16.4.6",
