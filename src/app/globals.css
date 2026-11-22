@@ -801,16 +801,18 @@ table.data-table {
   --pos: 50%;
   position: relative;
   width: min(100%, 460px);
-  aspect-ratio: 1;
+  flex-shrink: 0;
   padding: var(--space-3);
   border-radius: 50%;
   background: var(--surface-1);
   touch-action: pan-y;
 }
+/* The face carries the square, not the ring: a percentage height inside an aspect-ratio box in a flex column
+   stretches into an oval on mobile Safari. The ring's even padding keeps it round around the face. */
 .wipe__face {
   position: relative;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1;
   border-radius: 50%;
   overflow: hidden;
   background: #000;
@@ -893,6 +895,10 @@ table.data-table {
 @media (max-width: 599px) {
   .band {
     padding: var(--space-12) 0;
+  }
+  /* Sections left off phones, such as the machine check. */
+  .band--desktop-only {
+    display: none;
   }
   .band__title {
     font-size: 26px;

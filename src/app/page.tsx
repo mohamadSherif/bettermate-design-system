@@ -75,7 +75,7 @@ export default function Overview() {
         <section className="hero" aria-labelledby="hero-title">
           <div>
             <h1 className="hero__title" id="hero-title">
-              Same machine, easier to use.
+              reimagined.
             </h1>
             <p className="hero__lede">
               BetterMate is a new display and web interface for GaggiMate. It runs on the display you already have and works with the stock GaggiMate
@@ -149,7 +149,7 @@ export default function Overview() {
         </div>
       </section>
 
-      <section className="band" aria-labelledby="check-title">
+      <section className="band band--desktop-only" aria-labelledby="check-title">
         <div className="wrap">
           <div className="band__head">
             <h2 className="band__title" id="check-title">
